@@ -22,8 +22,12 @@ class geko_controller extends tslib_pibase{
 		$this->pi_loadLL();
 	
 		$this->extKey == (string)$extKey;
-		$this->prefixId = (string)get_class($this);
-		$this->fe_plugin = (string)get_class($this);
+		
+		if($this->prefixId==null)
+			$this->prefixId = (string)get_class($this);
+		
+		if($this->fe_plugin==null)
+			$this->fe_plugin = (string)get_class($this);
 		
 		$pom = (array)explode("_",$this->prefixId);
 		
