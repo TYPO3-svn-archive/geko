@@ -114,7 +114,7 @@ class geko_controller extends tslib_pibase{
                     
     	return (array)$ff_conf;
     }
-	
+
 };
 
 class geko_controller_exception extends Exception{};

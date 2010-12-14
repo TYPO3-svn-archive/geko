@@ -94,8 +94,8 @@ class geko_view {
 	/*
 		Add JavaScript to header
 	*/
-	public function add_javascript($file){
-        $GLOBALS['TSFE']->additionalHeaderData[$this->extKey."_".$this->fe_plugin."_js"] =
+	public function add_javascript($file,$key=false){
+        $GLOBALS['TSFE']->additionalHeaderData[$this->extKey."_".$this->fe_plugin.$key."_js"] =
 			sprintf('<script src="%s" language="javascript" type="text/javascript"></script> ',$file);
     
 	}
