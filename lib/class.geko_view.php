@@ -114,7 +114,7 @@ class geko_view {
 	}
 	
 	public function add_stylesheet_tmp($file){
-		$file = t3lib_extMgm::siteRelPath("tend_sical")."/app/res/css/".$file;
+		$file = t3lib_extMgm::siteRelPath($this->extKey)."/app/res/css/".$file;
 		return $this->add_stylesheet(TSpagegen::inline2TempFile(file_get_contents($file), 'css'));
 	}
 };
