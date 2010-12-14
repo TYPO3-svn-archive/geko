@@ -101,7 +101,7 @@ class geko_view {
 	}
 	
 	public function add_javascript_tmp($file){
-		$file = t3lib_extMgm::siteRelPath("tend_sical")."/app/res/js/".$file;
+		$file = t3lib_extMgm::siteRelPath($this->extKey)."/app/res/js/".$file;
 		return $this->add_javascript(TSpagegen::inline2TempFile(file_get_contents($file), 'js'));
 	}
 	
