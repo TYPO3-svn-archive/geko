@@ -108,8 +108,8 @@ class geko_view {
 	/*
 		Add StyleSheet to header
 	*/
-	public function add_stylesheet($file){
-		$GLOBALS['TSFE']->additionalHeaderData[$this->extKey."_".$this->fe_plugin."_css"] =
+	public function add_stylesheet($file,$key=""){
+		$GLOBALS['TSFE']->additionalHeaderData[$this->extKey."_".$this->fe_plugin.$key."_css"] =
 			'<link href="'.$file.'" type="text/css" rel="stylesheet"/>';	
 	}
 	
