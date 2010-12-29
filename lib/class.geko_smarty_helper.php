@@ -33,6 +33,22 @@ class geko_smarty_helper{
 	}
 	
 	/*
+		Get Doctrine errors for field
+	*/
+	public static function input_errors($params, $smarty=false){
+		$geko_view = (array)$smarty->_tpl_vars["geko_view"];
+		$object = $smarty->_tpl_vars[trim($params["object"])];
+		$field = $params["field"];
+		$prefixId = $geko_view["fe_plugin"];
+		
+		$errors = (array)$object->getErrorStack()->get($params["field"]);
+		
+		# if(count($errors)==0) return "";
+		
+		return $errors;
+	}
+	
+	/*
 		Return field but localized
 	*/
 	public static function local($params = false, $smarty = false){

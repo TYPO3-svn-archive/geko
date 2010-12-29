@@ -57,6 +57,7 @@ class geko_view {
 		// Register functions
 		$this->get_smarty()->register_function("form_open","geko_smarty_helper::form_open");
 		$this->get_smarty()->register_function("form_input","geko_smarty_helper::form_input");
+		$this->get_smarty()->register_function("input_errors","geko_smarty_helper::input_errors");
 		$this->get_smarty()->register_function("local","geko_smarty_helper::local");
 		$this->get_smarty()->register_function("selected","geko_smarty_helper::selected");
 
@@ -100,9 +101,19 @@ class geko_view {
     
 	}
 	
+	/*
+		Temp file to javascript
+	*/
 	public function add_javascript_tmp($file){
 		$file = t3lib_extMgm::siteRelPath($this->extKey)."/app/res/js/".$file;
 		return $this->add_javascript(TSpagegen::inline2TempFile(file_get_contents($file), 'js'));
+	}
+	
+	/*
+		Add inline javascript
+	*/
+	public function add_javascript_inline($inline,$key=false){
+		return $this->add_javascript(TSpagegen::inline2TempFile($inline,"js"),$key);
 	}
 	
 	/*
