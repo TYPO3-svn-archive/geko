@@ -43,9 +43,16 @@ class geko_smarty_helper{
 		
 		$errors = (array)$object->getErrorStack()->get($params["field"]);
 		
-		# if(count($errors)==0) return "";
+		if(count($errors)==0) return "";
 		
-		return $errors;
+		return '<span class="error">*</span>';
+		
+		/*
+		foreach($errors as $error){
+			echo smarty_block_translate(array("label"=>$error),$error);	
+			exit;
+		};
+		*/
 	}
 	
 	/*

@@ -111,6 +111,7 @@ class geko_controller extends tslib_pibase{
         $ff_conf = array();
         $piFlexForm = $this->cObj->data['pi_flexform'];
 
+		if(is_array($piFlexForm['data']) && count($piFlexForm['data']) != 0)
         foreach ( $piFlexForm['data'] as $sheet => $data )
             foreach ( $data as $lang => $value )
                 foreach ( $value as $key => $val )

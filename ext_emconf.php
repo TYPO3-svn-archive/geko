@@ -17,7 +17,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'author' => 'Oto Brglez',
 	'author_email' => 'otobrglez@gmail.com',
 	'shy' => '',
-	'dependencies' => '',
+	'dependencies' => 'smarty',
 	'conflicts' => '',
 	'priority' => '',
 	'module' => '',
@@ -32,6 +32,7 @@ $EM_CONF[$_EXTKEY] = array(
 	'version' => '1.0.1',
 	'constraints' => array(
 		'depends' => array(
+			'smarty' => '',
 		),
 		'conflicts' => array(
 		),

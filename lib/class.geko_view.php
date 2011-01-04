@@ -102,6 +102,15 @@ class geko_view {
 	}
 	
 	/*
+		Add JavaScript to header
+	*/
+	public function add_inline_javascript($src,$key=false){
+        $GLOBALS['TSFE']->additionalHeaderData[$this->extKey."_".$this->fe_plugin.$key."_js"] =
+			'<script language="javascript" type="text/javascript">'.$src.'</script>';
+    
+	}
+	
+	/*
 		Temp file to javascript
 	*/
 	public function add_javascript_tmp($file){
